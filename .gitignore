@@ -1,0 +1,26 @@
+# ACR runtime data and project-local agent configuration
+.acr/
+.claude/
+.codex/
+.mcp.json
+
+# Build outputs
+/bin/
+/web/node_modules/
+/web/tsconfig.*.tsbuildinfo
+/web/vite.config.js
+/web/vite.config.d.ts
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.log
+
+# Local environment and test artifacts
+.env
+.env.*
+!.env.example
+coverage/
+*.out
