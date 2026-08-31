@@ -1,0 +1,9 @@
+{
+  "session_id": "00000000-0000-0000-0000-000000000001",
+  "transcript_path": "/home/user/.claude/projects/-workspace-project/00000000-0000-0000-0000-000000000001.jsonl",
+  "cwd": "/workspace/project",
+  "prompt_id": "00000000-0000-0000-0000-000000000002",
+  "agent_id": "af5014ddec01a4fe0",
+  "agent_type": "general-purpose",
+  "hook_event_name": "SubagentStart"
+}

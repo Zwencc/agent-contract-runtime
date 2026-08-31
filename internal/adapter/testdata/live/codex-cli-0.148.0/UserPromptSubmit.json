@@ -1,0 +1,10 @@
+{
+  "session_id": "00000000-0000-0000-0000-000000000000",
+  "turn_id": "00000000-0000-0000-0000-000000000001",
+  "transcript_path": "/home/user/.codex/sessions/2026/10/20/rollout-2026-10-20T01-53-25-00000000-0000-0000-0000-000000000000.jsonl",
+  "cwd": "/workspace/project",
+  "hook_event_name": "UserPromptSubmit",
+  "model": "gpt-5.6-sol",
+  "permission_mode": "bypassPermissions",
+  "prompt": "First run the shell command: echo parent-ok . Then use spawn_agent to start a subagent whose task is to run the shell command: echo subagent-ok , and wait for it to finish. Finally reply with exactly: done"
+}

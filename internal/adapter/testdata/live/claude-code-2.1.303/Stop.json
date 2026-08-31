@@ -1,0 +1,23 @@
+{
+  "session_id": "00000000-0000-0000-0000-000000000001",
+  "transcript_path": "/home/user/.claude/projects/-workspace-project/00000000-0000-0000-0000-000000000001.jsonl",
+  "cwd": "/workspace/project",
+  "prompt_id": "00000000-0000-0000-0000-000000000002",
+  "permission_mode": "default",
+  "effort": {
+    "level": "medium"
+  },
+  "hook_event_name": "Stop",
+  "stop_hook_active": false,
+  "last_assistant_message": "The subagent is still running. I'll reply with `done` once it reports back.",
+  "background_tasks": [
+    {
+      "id": "af5014ddec01a4fe0",
+      "type": "subagent",
+      "status": "running",
+      "description": "Run echo subagent-ok",
+      "agent_type": "general-purpose"
+    }
+  ],
+  "session_crons": []
+}

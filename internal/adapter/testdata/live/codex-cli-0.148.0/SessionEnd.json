@@ -1,0 +1,7 @@
+{
+  "session_id": "00000000-0000-0000-0000-000000000000",
+  "transcript_path": "/home/user/.codex/sessions/2026/10/20/rollout-2026-10-20T01-53-25-00000000-0000-0000-0000-000000000000.jsonl",
+  "cwd": "/workspace/project",
+  "hook_event_name": "SessionEnd",
+  "reason": "other"
+}

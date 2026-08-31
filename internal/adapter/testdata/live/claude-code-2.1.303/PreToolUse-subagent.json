@@ -1,0 +1,19 @@
+{
+  "session_id": "00000000-0000-0000-0000-000000000001",
+  "transcript_path": "/home/user/.claude/projects/-workspace-project/00000000-0000-0000-0000-000000000001.jsonl",
+  "cwd": "/workspace/project",
+  "prompt_id": "00000000-0000-0000-0000-000000000002",
+  "permission_mode": "default",
+  "agent_id": "af5014ddec01a4fe0",
+  "agent_type": "general-purpose",
+  "effort": {
+    "level": "medium"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "echo subagent-ok",
+    "description": "Echo subagent-ok test string"
+  },
+  "tool_use_id": "toolu_01SfiFxxwiEgvazAyUyXDzWd"
+}
