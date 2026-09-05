@@ -1,0 +1,51 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/absolute/path/to/acr hook claude session-start --contracts /absolute/project/.acr/contracts --project-id PROJECT_ID --workspace-id WORKSPACE_ID --event-db /absolute/project/.acr/events.db",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|Write|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/absolute/path/to/acr hook claude pre-tool-use --contracts /absolute/project/.acr/contracts --project-id PROJECT_ID --workspace-id WORKSPACE_ID --event-db /absolute/project/.acr/events.db",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|Edit|Write|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/absolute/path/to/acr hook claude post-tool-use --project-id PROJECT_ID --workspace-id WORKSPACE_ID --event-db /absolute/project/.acr/events.db",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "Bash|Edit|Write|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/absolute/path/to/acr hook claude post-tool-use-failure --project-id PROJECT_ID --workspace-id WORKSPACE_ID --event-db /absolute/project/.acr/events.db",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
