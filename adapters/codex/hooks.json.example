@@ -1,0 +1,43 @@
+{
+  "description": "ACR PreToolUse correction hook",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/absolute/path/to/acr hook codex session-start --contracts /absolute/project/.acr/contracts --project-id PROJECT_ID --workspace-id WORKSPACE_ID --event-db /absolute/project/.acr/events.db",
+            "timeout": 5,
+            "statusMessage": "ACR is loading project context"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|apply_patch|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/absolute/path/to/acr hook codex pre-tool-use --contracts /absolute/project/.acr/contracts --project-id PROJECT_ID --workspace-id WORKSPACE_ID --event-db /absolute/project/.acr/events.db",
+            "timeout": 5,
+            "statusMessage": "ACR is evaluating contracts"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|apply_patch|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/absolute/path/to/acr hook codex post-tool-use --project-id PROJECT_ID --workspace-id WORKSPACE_ID --event-db /absolute/project/.acr/events.db",
+            "timeout": 5,
+            "statusMessage": "ACR is recording tool outcome"
+          }
+        ]
+      }
+    ]
+  }
+}
