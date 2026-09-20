@@ -22,5 +22,5 @@
 .env
 .env.*
 !.env.example
-coverage/
+/coverage/
 *.out
