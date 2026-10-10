@@ -1,0 +1,20 @@
+{
+  "schema_version": "acr.repair-plan/v1alpha1",
+  "id": "go-test-before-build",
+  "idempotency_key": "go-test-before-build-example-v1",
+  "resource_keys": ["build:local"],
+  "steps": [
+    {
+      "id": "test",
+      "argv": ["go", "test", "./..."],
+      "cwd": "",
+      "timeout_seconds": 300
+    },
+    {
+      "id": "build",
+      "argv": ["go", "build", "./cmd/acr"],
+      "cwd": "",
+      "timeout_seconds": 120
+    }
+  ]
+}

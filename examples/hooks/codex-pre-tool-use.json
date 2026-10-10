@@ -1,0 +1,13 @@
+{
+  "session_id": "codex-example-session",
+  "turn_id": "codex-example-turn",
+  "cwd": "/workspace/project",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "apply_patch",
+  "tool_use_id": "codex-example-call",
+  "tool_input": {
+    "command": "*** Begin Patch\n*** Update File: generated/schema.go\n@@\n-old value\n+new value\n*** End Patch"
+  },
+  "model": "codex",
+  "permission_mode": "default"
+}

@@ -1,0 +1,43 @@
+{
+  "apiVersion": "acr.dev/v1alpha1",
+  "kind": "Contract",
+  "metadata": {
+    "id": "claude-rewrite-generated-write",
+    "version": 1,
+    "title": "将生成目录写入修正到源目录",
+    "status": "active",
+    "severity": "high",
+    "priority": 900,
+    "tags": ["filesystem", "correction"]
+  },
+  "scope": {
+    "workspace_globs": ["/workspace/project"],
+    "agent_kinds": ["claude-code"],
+    "tool_names": ["Write"],
+    "operation_kinds": ["filesystem.write"]
+  },
+  "applicability": {
+    "all": [
+      {
+        "field": "input.file_path",
+        "operator": "glob",
+        "value": "/workspace/project/generated/*"
+      }
+    ]
+  },
+  "behavior": {
+    "instruction": "生成目录不可直接修改，应修改对应源文件",
+    "enforcement": "hard",
+    "non_overridable": true
+  },
+  "correction": {
+    "mode": "rewrite",
+    "transform": {
+      "type": "replace_path",
+      "field": "input.file_path",
+      "from": "/workspace/project/generated",
+      "to": "/workspace/project/src"
+    }
+  },
+  "failure_mode": "closed"
+}

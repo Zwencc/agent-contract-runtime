@@ -1,0 +1,42 @@
+{
+  "apiVersion": "acr.dev/v1alpha1",
+  "kind": "Contract",
+  "metadata": {
+    "id": "require-tests-before-deploy",
+    "version": 1,
+    "title": "部署前测试必须在当前源码上通过",
+    "status": "active",
+    "severity": "high",
+    "priority": 900,
+    "tags": ["deploy", "evidence"]
+  },
+  "scope": {
+    "operation_kinds": ["process.exec"]
+  },
+  "applicability": {
+    "all": [
+      {
+        "field": "input.command",
+        "operator": "contains",
+        "value": "./deploy.sh"
+      }
+    ]
+  },
+  "behavior": {
+    "instruction": "部署前单元测试必须在当前源码上通过",
+    "enforcement": "hard"
+  },
+  "correction": {
+    "mode": "deny"
+  },
+  "verifiers": {
+    "evidence": [
+      {
+        "subject": "repair:checks/unit",
+        "remedy": "acr repair run --plan .acr/plans/checks.json --apply",
+        "plan": ".acr/plans/checks.json"
+      }
+    ]
+  },
+  "failure_mode": "closed"
+}

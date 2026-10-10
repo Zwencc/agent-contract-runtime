@@ -1,0 +1,42 @@
+{
+  "apiVersion": "acr.dev/v1alpha1",
+  "kind": "Contract",
+  "metadata": {
+    "id": "codex-rewrite-generated-patch",
+    "version": 1,
+    "title": "将生成目录补丁修正到源目录",
+    "status": "active",
+    "severity": "high",
+    "priority": 900,
+    "tags": ["filesystem", "correction"]
+  },
+  "scope": {
+    "agent_kinds": ["codex"],
+    "tool_names": ["apply_patch"],
+    "operation_kinds": ["filesystem.write"]
+  },
+  "applicability": {
+    "all": [
+      {
+        "field": "input.command",
+        "operator": "contains",
+        "value": "*** Update File: generated/"
+      }
+    ]
+  },
+  "behavior": {
+    "instruction": "生成目录不可直接修改，应修改对应源文件",
+    "enforcement": "hard",
+    "non_overridable": true
+  },
+  "correction": {
+    "mode": "rewrite",
+    "transform": {
+      "type": "replace_path",
+      "field": "input.command",
+      "from": "generated",
+      "to": "src"
+    }
+  },
+  "failure_mode": "closed"
+}

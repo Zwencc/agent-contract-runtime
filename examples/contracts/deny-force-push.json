@@ -1,0 +1,34 @@
+{
+  "apiVersion": "acr.dev/v1alpha1",
+  "kind": "Contract",
+  "metadata": {
+    "id": "deny-force-push",
+    "version": 1,
+    "title": "禁止强制推送",
+    "status": "active",
+    "severity": "high",
+    "priority": 900,
+    "tags": ["git"]
+  },
+  "scope": {
+    "operation_kinds": ["process.exec"]
+  },
+  "applicability": {
+    "all": [
+      {
+        "field": "input.command",
+        "operator": "contains",
+        "value": "git push --force"
+      }
+    ]
+  },
+  "behavior": {
+    "instruction": "不得强制推送；先 git fetch 并 rebase，或请用户处理分叉",
+    "enforcement": "hard",
+    "non_overridable": true
+  },
+  "correction": {
+    "mode": "deny"
+  },
+  "failure_mode": "closed"
+}

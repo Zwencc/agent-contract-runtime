@@ -1,0 +1,17 @@
+{
+  "schema_version": "acr.repair-plan/v1alpha1",
+  "id": "checks",
+  "idempotency_key": "checks-v1",
+  "resource_keys": ["tests"],
+  "repeatable": true,
+  "steps": [
+    {
+      "id": "unit",
+      "argv": ["go", "test", "./..."],
+      "timeout_seconds": 300,
+      "verification": {
+        "inputs": ["**/*.go", "go.mod", "go.sum"]
+      }
+    }
+  ]
+}

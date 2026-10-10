@@ -1,0 +1,40 @@
+{
+  "apiVersion": "acr.dev/v1alpha1",
+  "kind": "Contract",
+  "metadata": {
+    "id": "shared-generated-to-src",
+    "version": 1,
+    "title": "生成目录的修改改到源目录（Claude Code 与 Codex 共用）",
+    "status": "active",
+    "severity": "high",
+    "priority": 900,
+    "tags": ["filesystem", "correction", "cross-agent"]
+  },
+  "scope": {
+    "operation_kinds": ["filesystem.write"]
+  },
+  "applicability": {
+    "all": [
+      {
+        "field": "paths",
+        "operator": "glob",
+        "value": "generated/**"
+      }
+    ]
+  },
+  "behavior": {
+    "instruction": "generated/ 由生成器产出，不可直接修改；改 src/ 下对应的源文件",
+    "enforcement": "hard",
+    "non_overridable": true
+  },
+  "correction": {
+    "mode": "rewrite",
+    "transform": {
+      "type": "replace_path",
+      "field": "paths",
+      "from": "generated",
+      "to": "src"
+    }
+  },
+  "failure_mode": "closed"
+}

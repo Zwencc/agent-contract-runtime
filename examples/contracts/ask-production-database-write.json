@@ -1,0 +1,34 @@
+{
+  "apiVersion": "acr.dev/v1alpha1",
+  "kind": "Contract",
+  "metadata": {
+    "id": "ask-production-database-write",
+    "version": 1,
+    "title": "直接操作生产库需要人工确认",
+    "status": "active",
+    "severity": "critical",
+    "priority": 950,
+    "tags": ["database", "production"]
+  },
+  "scope": {
+    "operation_kinds": ["process.exec"]
+  },
+  "applicability": {
+    "all": [
+      {
+        "field": "input.command",
+        "operator": "contains",
+        "value": "PROD_DATABASE_URL"
+      }
+    ]
+  },
+  "behavior": {
+    "instruction": "该命令会连接生产库。项目没有配置 staging 数据库，ACR 不会猜测替代地址；请人工确认，或先配置 STAGING_DATABASE_URL 并改用它",
+    "enforcement": "hard",
+    "non_overridable": true
+  },
+  "correction": {
+    "mode": "ask"
+  },
+  "failure_mode": "closed"
+}
