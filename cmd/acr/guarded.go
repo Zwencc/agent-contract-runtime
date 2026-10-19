@@ -48,7 +48,7 @@ var codexGuardedDisabledFeatures = []string{
 // server approved while the global native-tool approval policy stayed never.
 var codexGuardedCertified = true
 
-const codexGuardedUnavailable = "guarded mode is not available for this Codex build; use acr launch --mode native codex and see docs/capability-codex-guarded.md"
+const codexGuardedUnavailable = "guarded mode is not available for this Codex build; use acr launch --mode native codex and see docs/02-architecture.md"
 
 const guardedInstructions = "ACR guarded mode: the native Bash, Edit, Write and NotebookEdit tools are disabled. " +
 	"Use mcp__acr__exec, mcp__acr__write_file and mcp__acr__edit_file instead. ACR checks every call against the project contracts before it runs; " +

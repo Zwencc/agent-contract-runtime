@@ -15,4 +15,4 @@ ACR 处在 v0.1 alpha 阶段，接口与线格式仍会变化。安全修复只�
 
 ## 保证范围
 
-ACR 的保证等级见 `docs/02-architecture.md` 第 6 节。Native 模式（L1）依赖宿主 Hook，宿主失败开放的情况不属于 ACR 漏洞，但 ACR 未如实报告降级属于漏洞。Guarded 模式只对 `docs/capability-*.md` 中认证过的宿主版本作出承诺。
+ACR 的保证等级见 `docs/02-architecture.md` 第 6 节。Native 模式（L1）依赖宿主 Hook，宿主失败开放的情况不属于 ACR 漏洞，但 ACR 未如实报告降级属于漏洞。Guarded 模式只对运行时明确识别并通过自检的宿主版本作出承诺；其他版本必须拒绝启动或明确降级为 Native。

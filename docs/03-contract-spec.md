@@ -15,7 +15,7 @@ draft -> validated -> approved -> active -> suspended -> retired
 
 任何内容修改都会产生新版本并重新审批，不允许原地修改已激活版本。
 
-当前实现（v0.1 alpha）：这里的"审批"由事件链上的激活记录承担。人在终端执行 `acr contract activate`，或用户在对话里让 Agent 调用 `add_rule`（附用户原话，ACR 核对后记录为证据），都会写入 `contract.activated`；运行时只执行激活记录中的契约。契约的 `authorization` 字段允许用户在当轮对话里临时放行，`paths` 字段按项目相对路径匹配，使一条契约同时约束各个 Agent。详见 `docs/11-practical-runtime.md` 第 11 节。
+当前实现（v0.1 alpha）：这里的"审批"由事件链上的激活记录承担。人在终端执行 `acr contract activate`，或用户在对话里让 Agent 调用 `add_rule`（附用户原话，ACR 核对后记录为证据），都会写入 `contract.activated`；运行时只执行激活记录中的契约。契约的 `authorization` 字段允许用户在当轮对话里临时放行，`paths` 字段按项目相对路径匹配，使一条契约同时约束各个 Agent。详见 [让 ACR 真正干活](11-practical-runtime.md) 第 11 节。
 
 ## 2. 契约对象
 
@@ -216,4 +216,3 @@ Adapter 不应把宿主原始 JSON 直接暴露给全部契约，而应转换成
 - 必须有过期时间；
 - 高风险豁免要求二次确认或外部审批；
 - 事件流记录申请、批准、使用和过期。
-

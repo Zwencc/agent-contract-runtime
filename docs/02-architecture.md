@@ -209,4 +209,4 @@ Hook/Event
 
 ACR 的事实源还必须描述自己“看漏了什么”。当 Hook 未信任、关闭、崩溃或宿主不兼容时，写入 `coverage_gap`，使受影响的验证和工作状态进入待复核状态。
 
-Native 模式只表示原生集成正在使用，不自动等于事件完整或强制有效。实时探针、人工对账和 Guarded 切换见 [Hook 失效、人工修正与恢复](09-hook-recovery-and-operations.md)。
+Native 模式只表示原生集成正在使用，不自动等于事件完整或强制有效。实时探针、人工对账和更强的 Guarded 边界属于后续演进能力，见 [未来功能](14-future-capabilities.md)。
